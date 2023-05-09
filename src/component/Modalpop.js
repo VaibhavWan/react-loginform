@@ -55,7 +55,7 @@ function ModalPop() {
       {Object.keys(formErrors).length === 0 && isSubmitting && (
         <span className="success-msg">Form submitted successfully</span>
       )}
-      <form onSubmit={handleSubmit} noValidate>
+      {/* <form onSubmit={handleSubmit} noValidate>
         <div className="form-row">
           <label htmlFor="email">Email</label>
           <input
@@ -87,6 +87,37 @@ function ModalPop() {
         </div>
 
         <button type="submit">Sign In</button>
+      </form> */}
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">
+            Email
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            required
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom02" class="form-label">
+            password
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom02"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            required
+          />
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">
+            Submit form
+          </button>
+        </div>
       </form>
     </div>
   );

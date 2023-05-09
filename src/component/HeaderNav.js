@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import Modalpop from './Modalpop';
+import ModalSignUp from './ModalSignUp';
 import './styles.css';
 
 function HeaderNav() {
@@ -9,6 +10,7 @@ function HeaderNav() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleSignupClose = () => setSignup(false);
   const handleSignup = () => setSignup(true);
   return (
     <>
@@ -39,10 +41,10 @@ function HeaderNav() {
           <Modalpop />
         </Modal.Body>
       </Modal>
-      <Modal show={showSignup} onHide={handleClose}>
+      <Modal show={showSignup} onHide={handleSignupClose} className="modal-lg">
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
-          <Modalpop />
+          <ModalSignUp />
         </Modal.Body>
       </Modal>
     </>
